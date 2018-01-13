@@ -1,0 +1,6 @@
+c:\users\yuriy\documents\visual studio 2015\Projects\Diploma\Diploma\bin\Debug\Diploma.exe.config
+C:\Users\Yuriy\Documents\Visual Studio 2015\Projects\Diploma\Diploma\bin\Debug\Diploma.exe
+C:\Users\Yuriy\Documents\Visual Studio 2015\Projects\Diploma\Diploma\bin\Debug\Diploma.pdb
+C:\Users\Yuriy\Documents\Visual Studio 2015\Projects\Diploma\Diploma\obj\Debug\Diploma.csprojResolveAssemblyReference.cache
+C:\Users\Yuriy\Documents\Visual Studio 2015\Projects\Diploma\Diploma\obj\Debug\Diploma.exe
+C:\Users\Yuriy\Documents\Visual Studio 2015\Projects\Diploma\Diploma\obj\Debug\Diploma.pdb
