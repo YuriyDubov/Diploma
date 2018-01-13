@@ -1,6 +1,0 @@
-I just want to add this directly to master
-<<<<<<< HEAD
-I love GIT
-=======
-I hate git
->>>>>>> origin/master
