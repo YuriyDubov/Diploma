@@ -89,7 +89,5 @@ namespace Diploma
         {
             return epsilon / 1000m;
         }
-
-
     }
 }
