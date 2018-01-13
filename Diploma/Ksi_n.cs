@@ -83,5 +83,11 @@ namespace Diploma
             Simplex res = new Simplex(matr);
             return res;
         }
+
+        // Считаем Лямбду
+        public decimal Lambda(decimal F, Matrix W)
+        {
+            return epsilon / 1000m;
+        }
     }
 }
