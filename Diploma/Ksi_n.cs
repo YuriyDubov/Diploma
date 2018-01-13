@@ -83,26 +83,5 @@ namespace Diploma
             Simplex res = new Simplex(matr);
             return res;
         }
-
-        // Считаем Лямбду
-        public decimal Lambda(decimal F, Matrix W)
-        {
-            /*Matrix WTrans = new Matrix(W.Transpose());
-            Matrix WWF = W * WTrans * F;
-
-            decimal res = 0;
-            for (int i = 0; i < WWF.Row; i++)
-            {
-                for (int j = 0; j < WWF.Column; j++)
-                {
-                    res += F * WWF.Array[i, j];
-                }
-            }
-            res /= WWF.Scalar();
-            return res;*/
-            return epsilon / 1000m;
-        }
-
-
     }
 }
