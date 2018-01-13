@@ -1,1 +1,2 @@
 I just want to add this directly to master
+I love GIT
