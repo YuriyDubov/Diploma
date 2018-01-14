@@ -65,7 +65,7 @@ namespace Diploma
         }
 
         // Начальное приближение 
-        private Simplex Start() 
+        public Simplex Start() 
         {
             decimal[,] mass = new decimal[Size + 1, Size];
             for(int i = 0; i < Size+1; i++)
@@ -85,9 +85,44 @@ namespace Diploma
         }
 
         // Считаем Лямбду
-        public decimal Lambda(decimal F, Matrix W)
+        public decimal Lambda()
         {
-            return epsilon / 1000m;
+            return epsilon * 10m;
         }
+
+        //Возможна ошибка в том, что изначальная матрица [n, n+1], а матрица Якоби [n+1, n+1] (Последний столбец - нули). Проблема в том, что берётся транспонированная  
+        private Simplex OneIteration(Matrix X, Matrix W, decimal F)
+        {
+            Matrix rightMatr = W.Transpose() * Lambda() * F;
+            Matrix result = new Matrix(X);
+
+            for(int i = 0; i < X.Row; i++)
+            {
+                for(int j = 0; j < X.Column; j++)
+                {
+                    result.Array[i, j] -= rightMatr.Array[i, j];
+                    if (result.Array[i, j] > 1)
+                        result.Array[i, j] = 1;
+                    if (result.Array[i, j] < 0)
+                        result.Array[i, j] = 0;
+                }
+            }
+            Simplex res = new Simplex(result);
+            return res;
+        }
+
+        public void Main()
+        {
+            // Начальная инициализация
+            Simplex S_k = Start();
+            Decimal ksi_k = S_k.Ksi();
+            Simplex S_k1 = OneIteration(S_k.array, new Matrix(size + 1, size + 1, PartialDerivative(S_k)), ksi_k);
+            Decimal ksi_k1 = S_k1.Ksi();
+            Console.WriteLine(S_k.array.ToString());
+            Console.WriteLine(ksi_k);
+            Console.WriteLine(S_k1.array.ToString());
+            Console.WriteLine(ksi_k1);
+        }
+
     }
 }
